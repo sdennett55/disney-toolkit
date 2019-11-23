@@ -16,7 +16,7 @@ This starter is a fork of Gatsby Starter Blog, the most popular starter by far â
 
 1.  **Create a Gatsby site.**
 
-    Use the Gatsby CLI to create a new site, specifying the blog starter.
+    Use the Gatsby CLI to create a new site, specifying the blog starter. Simple change.
 
     ```sh
     # create a new Gatsby site using the blog starter
