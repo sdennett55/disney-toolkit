@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
     // edit below
-    title: `Gatsby Starter Personal Blog`,
-    author: `Kyle Matthews`,
-    description: `A starter personal blog with styled components, dark mode, and Netlify CMS.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `Disney Toolkit`,
+    author: `Steve Dennett`,
+    description: `A blog with tips and tricks on how to make a magical Disneyland or Disney World experience!`,
+    siteUrl: `https://disneytoolkit.com`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `disneytoolkit`,
     },
   },
   plugins: [
@@ -64,7 +64,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // edit below
-        // trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-153144167-1`,
       },
     },
     {
