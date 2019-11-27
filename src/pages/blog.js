@@ -16,12 +16,16 @@ class Blog extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
-        <Bio />
         <div style={{ margin: "20px 0 40px" }}>
           {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug
+            const title = node.frontmatter.title || node.fields.slug;
+            // debugger;
+            console.table(node);
             return (
               <div key={node.fields.slug}>
+                {node.frontmatter.thumbnail && (
+                  <img src={node.frontmatter.thumbnail} alt="" />
+                )}
                 <h3
                   style={{
                     marginBottom: rhythm(1 / 4),
@@ -72,6 +76,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            thumbnail
           }
         }
       }

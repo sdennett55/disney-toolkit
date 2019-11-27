@@ -6,7 +6,7 @@ const Button = props => (
 )
 
 const ButtonWrapper = styled.button`
-  display: block;
+  display: inline-block;
   border: none;
   text-align: center;
   box-sizing: border-box;
@@ -15,7 +15,8 @@ const ButtonWrapper = styled.button`
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 2px;
-
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+  
   background: ${props => props.props.background || "black"};
   color: ${props => props.props.color || "rgb(255, 255, 255)"};
   font-size: ${props => props.props.fontSize || "15px"};
