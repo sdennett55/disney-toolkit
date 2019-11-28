@@ -6,6 +6,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import styled from 'styled-components';
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -19,7 +20,7 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <h1>{post.frontmatter.title}</h1>
+        <Header>{post.frontmatter.title}</Header>
         <p
           style={{
             ...scale(-1 / 5),
@@ -30,6 +31,7 @@ class BlogPostTemplate extends React.Component {
         >
           {post.frontmatter.date}
         </p>
+        <img src={post.frontmatter.thumbnail} alt="" />
         <MDXRenderer>{post.body}</MDXRenderer>
         <hr
           style={{
@@ -67,6 +69,10 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
+const Header = styled.h1`
+  color: #3978af;
+`;
+
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
@@ -85,6 +91,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        thumbnail
       }
     }
   }

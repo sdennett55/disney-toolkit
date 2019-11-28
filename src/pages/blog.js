@@ -29,6 +29,7 @@ class Blog extends React.Component {
                 <h3
                   style={{
                     marginBottom: rhythm(1 / 4),
+                    marginTop: 0
                   }}
                 >
                   <Link
@@ -48,9 +49,11 @@ class Blog extends React.Component {
             )
           })}
         </div>
-        <Link to="/">
-          <Button marginTop="85px">Go Home</Button>
-        </Link>
+        <div style={{textAlign: 'center'}}>
+          <Link to="/">
+            <Button marginTop="85px">Go Home</Button>
+          </Link>
+        </div>
       </Layout>
     )
   }

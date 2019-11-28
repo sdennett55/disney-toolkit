@@ -34,7 +34,7 @@ const BlogPosts = () => (
                 <Post href={`/blog/${path}`}>
                   <Image src={thumbnail} alt="" />
                   <div>
-                    <h3 style={{margin: '.5em 0'}}>{title}</h3>
+                    <h3 style={{margin: '.5em 0', fontFamily: 'Montserrat, sans-serif', color: '#3978af'}}>{title}</h3>
                     <p style={{marginBottom: '.5em'}}>{new Date(date).toLocaleDateString()}</p>
                     <p>{description}</p>
                   </div>
