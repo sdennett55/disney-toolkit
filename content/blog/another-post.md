@@ -5,4 +5,4 @@ title: Another post
 description: Another post checking how the featured image works
 thumbnail: /assets/disney_toolkit_logo.png
 ---
-asdf asdf
+whats going on
