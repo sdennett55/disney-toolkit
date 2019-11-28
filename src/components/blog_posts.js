@@ -30,11 +30,9 @@ const BlogPosts = () => (
           <Flex>
             {posts.sort((a, b) => new Date(a.node.frontmatter.date) > new Date(b.node.frontmatter.date) ? -1 : 1).map((post, index) => {
               const { title, date, description, thumbnail, path } = post.node.frontmatter;
-              const maxWidth = index === 0 ? '50%' : '300px';
-              const margin = index === 0 ? '0 1rem 1rem 0' : '0 1rem 0 0';
               return (
                 <Post href={`/blog/${path}`}>
-                  <img src={thumbnail} alt="" style={{margin, marginRight: '1rem', maxWidth}}/>
+                  <Image src={thumbnail} alt="" />
                   <div>
                     <h3 style={{margin: '.5em 0'}}>{title}</h3>
                     <p style={{marginBottom: '.5em'}}>{new Date(date).toLocaleDateString()}</p>
@@ -50,6 +48,16 @@ const BlogPosts = () => (
   </>
 );
 
+const Image = styled.img`
+  margin-right: 0;
+  @media (min-width: 900px) {
+    margin-right: 1rem;
+    max-width: 300px;
+    &:first-child {
+      max-width: 50%;
+    }
+  }
+`;
 const Flex = styled.div`
   display: flex;
   flex-direction: column;
@@ -57,12 +65,17 @@ const Flex = styled.div`
 `;
 const Post = styled.a`
   display: flex;
+  flex-direction: column;
   flex: 1;
   padding: 0 20px;
   margin: 1rem 0;
   text-decoration: none;
   color: inherit;
   box-shadow: none;
+
+  @media (min-width: 900px) {
+    flex-direction: row;
+  }
 `;
 
 export default BlogPosts;

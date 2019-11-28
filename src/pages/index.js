@@ -20,7 +20,7 @@ class IndexPage extends React.Component {
         <BlogPosts />
         <div style={{textAlign: 'center'}}>
           <Link to="/blog/">
-            <Button marginTop="35px" background="linear-gradient(135deg, #00bfbc 0%,#7db9e8 100%)">More Blog Posts</Button>
+            <Button marginTop="35px">More Blog Posts</Button>
           </Link>
         </div>
       </Layout>
