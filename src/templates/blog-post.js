@@ -31,15 +31,15 @@ class BlogPostTemplate extends React.Component {
         >
           {post.frontmatter.date}
         </p>
-        <img src={post.frontmatter.thumbnail} alt="" />
+        <ImageWrap>
+          <Image src={post.frontmatter.thumbnail} alt="" />
+        </ImageWrap>
         <MDXRenderer>{post.body}</MDXRenderer>
         <hr
           style={{
             marginBottom: rhythm(1),
           }}
         />
-        <Bio />
-
         <ul
           style={{
             display: `flex`,
@@ -69,8 +69,25 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
+const ImageWrap = styled.div`
+  position: relative;
+  padding-bottom: 55.666666666%;
+  margin-bottom: 2rem;
+`;
+
+const Image = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  max-height: 100%;
+`;
+
 const Header = styled.h1`
   color: #3978af;
+  margin-top: 0;
 `;
 
 export default BlogPostTemplate

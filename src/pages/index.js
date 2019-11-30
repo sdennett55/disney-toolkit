@@ -18,11 +18,11 @@ class IndexPage extends React.Component {
           keywords={[`blog`, `disney`, `world`, `disneyland`, 'tips', 'tricks', 'games']}
         />
         <BlogPosts />
-        <div style={{textAlign: 'center'}}>
+        {/* <div style={{textAlign: 'center'}}>
           <Link to="/blog/">
             <Button marginTop="35px">More Blog Posts</Button>
           </Link>
-        </div>
+        </div> */}
       </Layout>
     )
   }

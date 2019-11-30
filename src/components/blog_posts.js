@@ -1,6 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
+import Button from './button';
 
 const blogPostsQuery = graphql`
   query blogPosts {
@@ -25,7 +26,7 @@ const BlogPosts = () => (
     <StaticQuery
       query={blogPostsQuery}
       render={data => {
-        const { edges: posts } = data.allMdx;
+        const { edges: posts } = data.allMdx; 
         return (
           <Flex>
             {posts.sort((a, b) => new Date(a.node.frontmatter.date) > new Date(b.node.frontmatter.date) ? -1 : 1).map((post, index) => {
@@ -34,9 +35,10 @@ const BlogPosts = () => (
                 <Post href={`/blog/${path}`}>
                   <Image src={thumbnail} alt="" />
                   <div>
-                    <h3 style={{margin: '.5em 0', fontFamily: 'Montserrat, sans-serif', color: '#3978af'}}>{title}</h3>
+                    <Header>{title}</Header>
                     <p style={{marginBottom: '.5em'}}>{new Date(date).toLocaleDateString()}</p>
                     <p>{description}</p>
+                    <Button background="#3978af">Read More</Button>
                   </div>
                 </Post>
               )
@@ -48,10 +50,20 @@ const BlogPosts = () => (
   </>
 );
 
+const Header = styled.h3`
+  font-family: Montserrat, sans-serif; 
+  color: #3978af;
+  margin: .5em 0;
+
+  @media (min-width: 900px) {
+    margin-top: 0;
+  }
+`;
+
 const Image = styled.img`
   margin-right: 0;
   @media (min-width: 900px) {
-    margin-right: 1rem;
+    margin-right: 1.5rem;
     max-width: 300px;
     &:first-child {
       max-width: 50%;
@@ -73,6 +85,9 @@ const Post = styled.a`
   color: inherit;
   box-shadow: none;
 
+  &:first-child {
+    margin-top: 0;
+  }
   @media (min-width: 900px) {
     flex-direction: row;
   }
