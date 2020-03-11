@@ -77,10 +77,10 @@ class Layout extends React.Component {
         <Nav>
           <NavList>
             <ListItem key={1}>
-              <NavLink to="#">Wait Up!</NavLink>
+              <NavLink to="https://waitupgame.com">Wait Up!</NavLink>
             </ListItem>
             <ListItem key={2}>
-              <NavLink to="#">Reservation Reminders</NavLink>
+              <NavLink to="https://reminders.disneytoolkit.com">Reservation Reminders</NavLink>
             </ListItem>
           </NavList>
         </Nav>
