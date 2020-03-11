@@ -74,6 +74,16 @@ class Layout extends React.Component {
     return (
       <>
         <Header>{header}</Header>
+        <Nav>
+          <NavList>
+            <ListItem key={1}>
+              <NavLink to="#">Wait Up!</NavLink>
+            </ListItem>
+            <ListItem key={2}>
+              <NavLink to="#">Reservation Reminders</NavLink>
+            </ListItem>
+          </NavList>
+        </Nav>
         <Wrapper>
           <div
             style={{
@@ -121,5 +131,47 @@ const Footer = styled.footer`
   text-align: center;
   margin: 24px;
 `
+
+const Nav = styled.nav`
+  background-color: #3978af;
+`;
+
+const NavList = styled.ul`
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+`;
+
+const ListItem = styled.li`
+  margin: 0 1em;
+`;
+
+const NavLink = styled(Link)`
+  position: relative;
+  display: block;
+  padding: .5em 0;
+  box-shadow: none;
+  color: #fff;
+
+  &:after {
+    content: '';
+    position: absolute;
+    border-top: 1px solid white;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 8px;
+    opacity: 0;
+    transition: opacity .25s;
+  }
+  &:hover:after,
+  &:focus:after {
+    opacity: 1;
+  }
+`;
 
 export default Layout
