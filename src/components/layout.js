@@ -156,6 +156,7 @@ const NavLink = styled(Link)`
   padding: .5em 0;
   box-shadow: none;
   color: #fff;
+  font-family: Montserrat, sans-serif;
 
   &:after {
     content: '';
