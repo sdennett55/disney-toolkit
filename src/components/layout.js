@@ -77,10 +77,10 @@ class Layout extends React.Component {
         <Nav>
           <NavList>
             <ListItem key={1}>
-              <NavLink to="https://waitupgame.com">Wait Up!</NavLink>
+              <NavLink target="_blank" href="https://waitupgame.com">Wait Up!</NavLink>
             </ListItem>
             <ListItem key={2}>
-              <NavLink to="https://reminders.disneytoolkit.com">Reservation Reminders</NavLink>
+              <NavLink target="_blank" href="https://reminders.disneytoolkit.com">Reservation Reminders</NavLink>
             </ListItem>
           </NavList>
         </Nav>
@@ -125,6 +125,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   min-height: calc(100vh - 127px);
   justify-content: space-between;
+
 `
 
 const Footer = styled.footer`
@@ -150,7 +151,7 @@ const ListItem = styled.li`
   margin: 0 1em;
 `;
 
-const NavLink = styled(Link)`
+const NavLink = styled.a`
   position: relative;
   display: block;
   padding: .5em 0;

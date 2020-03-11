@@ -26,7 +26,7 @@ const BlogPosts = () => (
     <StaticQuery
       query={blogPostsQuery}
       render={data => {
-        const { edges: posts } = data.allMdx; 
+        const { edges: posts } = data.allMdx;
         return (
           <Flex>
             {posts.sort((a, b) => new Date(a.node.frontmatter.date) > new Date(b.node.frontmatter.date) ? -1 : 1).map((post, index) => {
@@ -51,7 +51,7 @@ const BlogPosts = () => (
 );
 
 const Header = styled.h3`
-  font-family: Montserrat, sans-serif; 
+  font-family: Montserrat, sans-serif;
   color: #3978af;
   margin: .5em 0;
 
@@ -87,6 +87,12 @@ const Post = styled.a`
 
   &:first-child {
     margin-top: 0;
+  }
+  &:hover,
+  &:focus {
+    ${Header} {
+      text-decoration: underline;
+    }
   }
   @media (min-width: 900px) {
     flex-direction: row;
